@@ -7,31 +7,31 @@ docker exec -it llm-summarizer-container bash
 
 ## Before Docker:
 
-Windows
-  ↓
-Python .venv
-  ↓
-FastAPI
-  ↓
-LangChain
-  ↓
-Hugging Face
+Windows  
+  ↓  
+Python .venv  
+  ↓  
+FastAPI  
+  ↓  
+LangChain  
+  ↓  
+Hugging Face  
 
-
+  
 ## With Docker:
 
-Windows
-  ↓
-Docker
-  ↓
-Container
-  ↓
-Python
-  ↓
-FastAPI
-  ↓
-LangChain
-  ↓
-Hugging Face
+Windows  
+  ↓  
+Docker  
+  ↓  
+Container  
+  ↓  
+Python  
+  ↓  
+FastAPI  
+  ↓  
+LangChain  
+  ↓  
+Hugging Face  
 
 
