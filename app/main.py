@@ -48,7 +48,7 @@ class SummarizeRequest(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "LLM Summarizer Docker App is running!"}
+    return {"message": "Hello from my Dockerized LLM app!"}
 
 
 @app.post("/summarize")
