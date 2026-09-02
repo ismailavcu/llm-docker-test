@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LLM Summarizer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>LLM Text Summarizer</h1>
+
+        <p>
+            Enter some text and let the LLM summarize it.
+        </p>
+
+        <textarea
+            id="textInput"
+            placeholder="Enter your text here..."
+        ></textarea>
+
+        <button id="summarizeButton">
+            Summarize
+        </button>
+
+        <div id="loading">
+            Generating summary...
+        </div>
+
+        <div class="result">
+            <h2>Summary</h2>
+
+            <p id="summary"></p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

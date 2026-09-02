@@ -8,3 +8,13 @@ services:
       - .env
     volumes:
       - ./app:/app/app
+
+  frontend:
+    build:
+      context: ./frontend
+
+    container_name: llm_summarizer-frontend
+    ports:
+     - "8080:80"
+    volumes:
+     - ./frontend:/usr/share/nginx/html

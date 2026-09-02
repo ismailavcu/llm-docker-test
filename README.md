@@ -5,33 +5,30 @@ docker logs llm-summarizer-container
 docker exec -it llm-summarizer-container bash  
 
 
-## Before Docker:
-
-Windows  
-  ↓  
-Python .venv  
-  ↓  
-FastAPI  
-  ↓  
-LangChain  
-  ↓  
-Hugging Face  
-
   
-## With Docker:
-
-Windows  
-  ↓  
-Docker  
-  ↓  
-Container  
-  ↓  
-Python  
-  ↓  
-FastAPI  
-  ↓  
-LangChain  
-  ↓  
-Hugging Face  
+## With Docker:  
+  
+                         Your Computer  
+                              │  
+               ┌──────────────┴──────────────┐  
+               │                             │  
+               ▼                             ▼  
+        localhost:8080                localhost:8000  
+               │                             │  
+               ▼                             ▼  
+      ┌─────────────────┐          ┌─────────────────┐  
+      │    Frontend     │          │     Backend     │  
+      │    Container    │          │    Container    │  
+      │                 │          │                 │  
+      │     Nginx       │          │    FastAPI      │  
+      │ HTML/CSS/JS     │          │       ↓         │  
+      └─────────────────┘          │    LangChain    │  
+                                   └────────┬────────┘  
+                                            │  
+                                            ▼  
+                                      Hugging Face  
+                                            │  
+                                            ▼  
+                                           LLM  
 
 

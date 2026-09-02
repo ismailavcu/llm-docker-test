@@ -6,10 +6,20 @@ from pydantic import BaseModel, Field
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from langchain_core.prompts import ChatPromptTemplate
 
+from fastapi.middleware.cors import CORSMiddleware
+
 load_dotenv()
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8080"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ---------- LLM ----------
 
