@@ -8,13 +8,24 @@ services:
       - .env
     volumes:
       - ./app:/app/app
+    healthcheck: # tells Docker how to determine whether the container is healthy
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/')"]
+      interval: 10s # Check every 10 seconds.
+      timeout: 5s # If the check doesn't finish within 5 seconds, it fails.
+      retries: 5 # Docker allows five failed checks before declaring the container unhealthy.
+      start_period: 10s # Give the application 10 seconds to start before failures count against its health status.
 
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile.dev
 
     container_name: llm_summarizer-frontend
     ports:
      - "8080:80"
     volumes:
      - ./frontend:/usr/share/nginx/html
+    depends_on: # Start the frontend after the backend becomes healthy. When Compose is creating the services, don't start frontend until app passes its health check.
+      app:
+        condition: service_healthy
+      # Startup dependency  ≠  Runtime dependency management
