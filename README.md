@@ -12,31 +12,6 @@ docker inspect --format="{{.State.Health.Status}}" llm-summarizer-container
 
 
   
-## With Docker:  
-  
-                         Your Computer  
-                              │  
-               ┌──────────────┴──────────────┐  
-               │                             │  
-               ▼                             ▼  
-        localhost:8080                localhost:8000  
-               │                             │  
-               ▼                             ▼  
-      ┌─────────────────┐          ┌─────────────────┐  
-      │    Frontend     │          │     Backend     │  
-      │    Container    │          │    Container    │  
-      │                 │          │                 │  
-      │     Nginx       │          │    FastAPI      │  
-      │ HTML/CSS/JS     │          │       ↓         │  
-      └─────────────────┘          │    LangChain    │  
-                                   └────────┬────────┘  
-                                            │  
-                                            ▼  
-                                      Hugging Face  
-                                            │  
-                                            ▼  
-                                           LLM  
-
 
 ## Docker scheme:  
 
