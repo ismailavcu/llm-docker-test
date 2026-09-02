@@ -1,0 +1,8 @@
+services:
+  app:
+    build: . # Build the Docker image using the Dockerfile in the current directory.
+    container_name: llm-summarizer-container
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
